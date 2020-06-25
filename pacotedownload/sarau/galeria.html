@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="sortcut icon" href="_IMG/logosarau.png" type="image/png"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="_CSS/demo.css" />
+	<link rel="stylesheet" type="text/css" href="_CSS/slicebox.css" />
+	<link rel="stylesheet" type="text/css" href="_CSS/custom.css" />
+	<script type="text/javascript" src="_JS/modernizr.custom.46884.js"></script>
+	<title>Galeria</title>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" style="background-image: url('_IMG/background.jpg'); background-size: 100%;">
+	<div style="width: 100%;background-color: black; height: 20%;padding-left: 3px;padding-top: 3px">
+		<a href="index.html">
+			<img src="_IMG/voltar.png" style="background-color: white;">
+		</a>
+	</div>
+	<div class="container" style="width: 100%">
+		<h1 style="font-size: 100px;color: white;text-shadow: 5px 2px 3px black;margin-left: 40px">GALERIA</h1>
+		<br>
+		<div class="wrapper">
+			<div id="nav-arrows" class="nav-arrows">
+				<a href="#"><h1 style="font-size: 40pt">Próxima</h1></a>
+				<a href="#"><h1 style="font-size: 40pt">Anterior</h1></a>
+			</div>
+			<br><br><br><br>
+			<ul id="sb-slider" class="sb-slider">
+				<li>
+					<img src="_IMG/adcast-1.jpg" />
+					<div class="sb-description">
+						<h3>Entrada da escola</h3>
+					</div>
+				</li>
+				<li>
+					
+					<img src="_IMG/adcast-2.jpg" />
+					
+					<div class="sb-description">
+						<h3>Nosso gestor feliz com a presença de todos</h3>
+					</div>
+				</li>
+				<li>
+					
+					<img src="_IMG/adcast-3.jpg" />
+					<div class="sb-description">
+						<h3>Primeiro dia do sarau ETEMB 2019</h3>
+					</div>
+				</li>
+				<li>
+					
+					<img src="_IMG/adcast-4.jpg" />
+					<div class="sb-description">
+						<h3>Alunos no primeiro dia do sarau ETEMB 2019</h3>
+					</div>
+				</li>
+				<li>
+					
+					<img src="_IMG/adcast-5.jpg" />
+					<div class="sb-description">
+						<h3>Convidados</h3>
+					</div>
+				</li>
+			</ul>
+
+			<div id="shadow" class="shadow"></div>
+			
+		</div><!-- /wrapper -->
+	</div>
+	<div class="footer-copyright" align="center"style="background: black;margin: 0;padding: 0">
+		<div class="container center">
+			<h4 style="color:white;font-size: 30px">Para vizualizar mais fotos clique <a href="https://photos.google.com/share/AF1QipNKawXPHkW18_DG-5_IjJV9uZiG8rbTYsdPWGTAyXaGyZZdOT3RI4wkSe7YtHHwsQ?key=M0kta1dqd3F5T3NSNEgxQTNtOWlxZVE3cUZtOGNB" target="_blank"style="color: #EE9A00">aqui</a><br></h4>
+			<br>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="_JS/jquery.slicebox.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+			var Page = (function() {
+
+				var $navArrows = $( '#nav-arrows' ).hide(),
+				$shadow = $( '#shadow' ).hide(),
+				slicebox = $( '#sb-slider' ).slicebox( {
+					onReady : function() {
+
+						$navArrows.show();
+						$shadow.show();
+
+					},
+					orientation : 'r',
+					cuboidsRandom : true,
+					disperseFactor : 30
+				} ),
+
+				init = function() {
+
+					initEvents();
+
+				},
+				initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+					})();
+
+					Page.init();
+
+				});
+			</script>
+		</body>
+		</html>	
